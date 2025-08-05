@@ -34,9 +34,9 @@ export const KpiCard = ({
   const getTrendIcon = () => {
     switch (changeType) {
       case "increase":
-        return <TrendingUp className="h-4 w-4 text-success" />;
+        return <TrendingUp className="h-4 w-4 text-notion-green" />;
       case "decrease":
-        return <TrendingDown className="h-4 w-4 text-destructive" />;
+        return <TrendingDown className="h-4 w-4 text-notion-red" />;
       default:
         return <Minus className="h-4 w-4 text-muted-foreground" />;
     }
@@ -45,31 +45,31 @@ export const KpiCard = ({
   const getTrendColor = () => {
     switch (changeType) {
       case "increase":
-        return "text-success";
+        return "text-notion-green";
       case "decrease":
-        return "text-destructive";
+        return "text-notion-red";
       default:
         return "text-muted-foreground";
     }
   };
 
   return (
-    <Card className={cn("hover:shadow-lg transition-shadow", className)}>
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium text-muted-foreground">
+    <Card className={cn("border border-border shadow-sm hover:shadow-md transition-all duration-200", className)}>
+      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-3">
+        <CardTitle className="text-sm font-medium text-muted-foreground tracking-wide">
           {title}
         </CardTitle>
         {icon && <div className="text-muted-foreground">{icon}</div>}
       </CardHeader>
-      <CardContent>
-        <div className="text-2xl font-bold text-foreground mb-1">
+      <CardContent className="pb-4">
+        <div className="text-3xl font-bold text-foreground mb-2 tracking-tight">
           {formatValue(value)}
         </div>
         {change !== undefined && (
-          <div className="flex items-center space-x-1">
+          <div className="flex items-center space-x-2">
             {getTrendIcon()}
-            <span className={cn("text-xs font-medium", getTrendColor())}>
-              {Math.abs(change)}%
+            <span className={cn("text-sm font-medium", getTrendColor())}>
+              {changeType === "increase" ? "+" : changeType === "decrease" ? "-" : ""}{Math.abs(change)}%
             </span>
           </div>
         )}

@@ -18,6 +18,9 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -52,13 +55,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				success: {
-					DEFAULT: 'hsl(var(--success))',
-					foreground: 'hsl(var(--success-foreground))'
-				},
-				warning: {
-					DEFAULT: 'hsl(var(--warning))',
-					foreground: 'hsl(var(--warning-foreground))'
+				notion: {
+					gray: 'hsl(var(--notion-gray))',
+					brown: 'hsl(var(--notion-brown))',
+					orange: 'hsl(var(--notion-orange))',
+					yellow: 'hsl(var(--notion-yellow))',
+					green: 'hsl(var(--notion-green))',
+					blue: 'hsl(var(--notion-blue))',
+					purple: 'hsl(var(--notion-purple))',
+					pink: 'hsl(var(--notion-pink))',
+					red: 'hsl(var(--notion-red))',
 				},
 				chart: {
 					'1': 'hsl(var(--chart-1))',

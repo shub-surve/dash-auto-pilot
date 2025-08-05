@@ -89,14 +89,14 @@ export const ChartContainer = ({ title, icon, type, data }: ChartContainerProps)
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center space-x-2">
+    <Card className="border border-border shadow-sm">
+      <CardHeader className="pb-4">
+        <CardTitle className="flex items-center space-x-3 text-lg font-semibold text-foreground">
           {icon}
           <span>{title}</span>
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="pb-6">
         {renderChart()}
       </CardContent>
     </Card>

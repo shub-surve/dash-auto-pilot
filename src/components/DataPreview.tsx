@@ -13,20 +13,14 @@ export const DataPreview = ({ data }: DataPreviewProps) => {
   const maxRows = 10; // Show only first 10 rows for preview
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center space-x-2">
-          <Database className="h-5 w-5" />
-          <span>Data Preview</span>
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="rounded-md border overflow-x-auto">
+    <Card className="border border-border shadow-sm">
+      <CardContent className="p-0">
+        <div className="border border-border rounded-lg overflow-hidden">
           <Table>
             <TableHeader>
-              <TableRow>
+              <TableRow className="bg-muted/30">
                 {data.columns.map((column, index) => (
-                  <TableHead key={index} className="font-semibold">
+                  <TableHead key={index} className="font-semibold text-foreground py-4 px-6">
                     {column}
                   </TableHead>
                 ))}
@@ -34,9 +28,9 @@ export const DataPreview = ({ data }: DataPreviewProps) => {
             </TableHeader>
             <TableBody>
               {data.rows.slice(0, maxRows).map((row, rowIndex) => (
-                <TableRow key={rowIndex}>
+                <TableRow key={rowIndex} className="hover:bg-muted/20 transition-colors">
                   {row.map((cell, cellIndex) => (
-                    <TableCell key={cellIndex} className="text-sm">
+                    <TableCell key={cellIndex} className="py-4 px-6 text-foreground">
                       {typeof cell === 'number' ? cell.toLocaleString() : cell}
                     </TableCell>
                   ))}
@@ -46,9 +40,11 @@ export const DataPreview = ({ data }: DataPreviewProps) => {
           </Table>
         </div>
         {data.rows.length > maxRows && (
-          <p className="text-sm text-muted-foreground mt-4 text-center">
-            Showing {maxRows} of {data.rows.length} rows
-          </p>
+          <div className="px-6 py-4 border-t border-border bg-muted/20">
+            <p className="text-sm text-muted-foreground text-center font-medium">
+              Showing {maxRows} of {data.rows.length} rows
+            </p>
+          </div>
         )}
       </CardContent>
     </Card>

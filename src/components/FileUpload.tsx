@@ -48,30 +48,30 @@ export const FileUpload = ({ onFileUpload, isLoading }: FileUploadProps) => {
   };
 
   return (
-    <Card className="p-6 border-2 border-dashed border-border hover:border-accent transition-colors">
+    <Card className="border border-border shadow-sm hover:shadow-md transition-shadow duration-200">
       {!uploadedFile ? (
         <div
           {...getRootProps()}
-          className={`cursor-pointer rounded-lg p-8 text-center transition-colors ${
-            isDragActive ? 'bg-accent/10 border-accent' : ''
+          className={`cursor-pointer rounded-lg p-12 text-center transition-colors duration-200 ${
+            isDragActive ? 'bg-muted border-foreground' : 'hover:bg-muted/50'
           }`}
         >
           <input {...getInputProps()} />
-          <Upload className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h3 className="text-lg font-semibold mb-2">Upload your data file</h3>
-          <p className="text-muted-foreground mb-4">
+          <Upload className="mx-auto h-12 w-12 text-muted-foreground mb-6" />
+          <h3 className="text-xl font-semibold mb-3 text-foreground">Upload your data file</h3>
+          <p className="text-muted-foreground mb-6 max-w-md mx-auto leading-relaxed">
             Drag and drop your CSV, XLS, or XLSX file here, or click to browse
           </p>
-          <Button variant="outline" className="mx-auto">
+          <Button variant="outline" className="font-medium">
             Choose File
           </Button>
         </div>
       ) : (
-        <div className="flex items-center justify-between p-4 bg-muted rounded-lg">
-          <div className="flex items-center space-x-3">
-            <File className="h-8 w-8 text-accent" />
+        <div className="flex items-center justify-between p-6 bg-muted/30 rounded-lg border border-border">
+          <div className="flex items-center space-x-4">
+            <File className="h-10 w-10 text-notion-blue" />
             <div>
-              <p className="font-medium">{uploadedFile.name}</p>
+              <p className="font-semibold text-foreground">{uploadedFile.name}</p>
               <p className="text-sm text-muted-foreground">
                 {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB
               </p>

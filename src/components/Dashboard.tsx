@@ -47,77 +47,88 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted p-6">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen bg-background">
+      <div className="max-w-6xl mx-auto px-6 py-8">
         {/* Header */}
-        <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            VibeBoard
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Transform your data into powerful insights with automated analytics and beautiful visualizations
-          </p>
+        <div className="mb-12">
+          <div className="mb-6">
+            <h1 className="text-5xl font-bold text-foreground mb-3 tracking-tight">
+              VibeBoard
+            </h1>
+            <p className="text-lg text-muted-foreground font-medium max-w-2xl leading-relaxed">
+              Transform your data into powerful insights with automated analytics and beautiful visualizations
+            </p>
+          </div>
         </div>
 
         {/* File Upload */}
-        <div className="max-w-2xl mx-auto">
+        <div className="mb-12">
           <FileUpload onFileUpload={handleFileUpload} isLoading={isLoading} />
         </div>
 
         {/* Loading State */}
         {isLoading && (
-          <Card className="max-w-2xl mx-auto">
-            <CardContent className="p-6 text-center">
-              <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Processing your data...</p>
-            </CardContent>
-          </Card>
+          <div className="flex flex-col items-center justify-center py-16">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-foreground mb-4"></div>
+            <p className="text-muted-foreground font-medium">Processing your data...</p>
+          </div>
         )}
 
         {/* Dashboard Content */}
         {data && !isLoading && (
-          <div className="space-y-6">
+          <div className="space-y-12">
             {/* KPI Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {kpis.map((kpi, index) => (
-                <KpiCard
-                  key={index}
-                  title={kpi.title}
-                  value={kpi.value}
-                  change={kpi.change}
-                  changeType={kpi.changeType}
-                  icon={kpi.icon}
-                />
-              ))}
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-foreground">Key Metrics</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {kpis.map((kpi, index) => (
+                  <KpiCard
+                    key={index}
+                    title={kpi.title}
+                    value={kpi.value}
+                    change={kpi.change}
+                    changeType={kpi.changeType}
+                    icon={kpi.icon}
+                  />
+                ))}
+              </div>
             </div>
 
             {/* Charts */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <ChartContainer
-                title="Revenue by Region"
-                icon={<BarChart3 className="h-5 w-5" />}
-                type="bar"
-                data={data}
-              />
-              <ChartContainer
-                title="Product Distribution"
-                icon={<PieChart className="h-5 w-5" />}
-                type="pie"
-                data={data}
-              />
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-foreground">Analytics</h2>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <ChartContainer
+                  title="Revenue by Region"
+                  icon={<BarChart3 className="h-5 w-5" />}
+                  type="bar"
+                  data={data}
+                />
+                <ChartContainer
+                  title="Product Distribution"
+                  icon={<PieChart className="h-5 w-5" />}
+                  type="pie"
+                  data={data}
+                />
+              </div>
             </div>
 
             {/* Data Preview */}
-            <DataPreview data={data} />
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-foreground">Data Preview</h2>
+              <DataPreview data={data} />
+            </div>
 
             {/* Export Actions */}
-            <div className="flex justify-center space-x-4">
-              <Button variant="outline">
-                Export to PDF
-              </Button>
-              <Button variant="outline">
-                Export to PPT
-              </Button>
+            <div className="pt-8 border-t border-border">
+              <div className="flex justify-center space-x-4">
+                <Button variant="outline" className="font-medium">
+                  Export to PDF
+                </Button>
+                <Button variant="outline" className="font-medium">
+                  Export to PPT
+                </Button>
+              </div>
             </div>
           </div>
         )}

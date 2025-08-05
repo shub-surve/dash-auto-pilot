@@ -8,55 +8,60 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 248 250 252;
-    --foreground: 226 232 240;
+    /* Notion-inspired warm color palette */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
 
-    --card: 255 255 255;
-    --card-foreground: 71 85 105;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 9%;
 
-    --popover: 255 255 255;
-    --popover-foreground: 71 85 105;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 219 78% 20%;
-    --primary-foreground: 248 250 252;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 226 232 240;
-    --secondary-foreground: 71 85 105;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 186 100% 50%;
-    --accent-foreground: 248 250 252;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 248 250 252;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 219 78% 20%;
+    --border: 0 0% 91%;
+    --input: 0 0% 91%;
+    --ring: 0 0% 9%;
 
-    /* VibeBoard specific colors */
-    --success: 142 76% 36%;
-    --success-foreground: 248 250 252;
-    --warning: 45 93% 47%;
-    --warning-foreground: 248 250 252;
-    --chart-1: 219 78% 20%;
-    --chart-2: 186 100% 50%;
-    --chart-3: 142 76% 36%;
-    --chart-4: 45 93% 47%;
-    --chart-5: 262 83% 58%;
+    /* Notion-style specific colors */
+    --notion-gray: 0 0% 55%;
+    --notion-brown: 25 41% 37%;
+    --notion-orange: 25 95% 53%;
+    --notion-yellow: 48 94% 68%;
+    --notion-green: 142 69% 58%;
+    --notion-blue: 211 96% 73%;
+    --notion-purple: 262 83% 78%;
+    --notion-pink: 325 78% 78%;
+    --notion-red: 357 79% 65%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(219 78% 20%), hsl(219 78% 35%));
-    --gradient-accent: linear-gradient(135deg, hsl(186 100% 50%), hsl(186 100% 65%));
-    --gradient-dashboard: linear-gradient(180deg, hsl(248 250 252), hsl(241 245 249));
-    
-    /* Shadows */
-    --shadow-card: 0 1px 3px 0 hsl(226 232 240 / 0.1), 0 1px 2px -1px hsl(226 232 240 / 0.1);
-    --shadow-dashboard: 0 4px 6px -1px hsl(226 232 240 / 0.1), 0 2px 4px -2px hsl(226 232 240 / 0.1);
+    /* Chart colors using Notion palette */
+    --chart-1: 0 0% 9%;
+    --chart-2: 211 96% 73%;
+    --chart-3: 142 69% 58%;
+    --chart-4: 25 95% 53%;
+    --chart-5: 262 83% 78%;
 
-    --radius: 0.5rem;
+    /* Subtle shadows like Notion */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    --radius: 6px;
 
     --sidebar-background: 0 0% 98%;
 
@@ -76,59 +81,54 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 224 71% 4%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 215 27% 17%;
-    --secondary-foreground: 213 31% 91%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 215 27% 17%;
-    --muted-foreground: 217 10% 65%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
 
-    --accent: 186 100% 50%;
-    --accent-foreground: 224 71% 4%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 63% 31%;
-    --destructive-foreground: 213 31% 91%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 215 27% 17%;
-    --input: 215 27% 17%;
-    --ring: 216 34% 17%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 83%;
 
-    --success: 142 76% 36%;
-    --success-foreground: 213 31% 91%;
-    --warning: 45 93% 47%;
-    --warning-foreground: 224 71% 4%;
-    --chart-1: 210 40% 98%;
-    --chart-2: 186 100% 50%;
-    --chart-3: 142 76% 36%;
-    --chart-4: 45 93% 47%;
-    --chart-5: 262 83% 58%;
+    --notion-gray: 0 0% 64%;
+    --notion-brown: 25 30% 64%;
+    --notion-orange: 25 95% 70%;
+    --notion-yellow: 48 94% 76%;
+    --notion-green: 142 69% 70%;
+    --notion-blue: 211 96% 78%;
+    --notion-purple: 262 83% 85%;
+    --notion-pink: 325 78% 85%;
+    --notion-red: 357 79% 78%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(210 40% 98%), hsl(186 100% 50%));
-    --gradient-accent: linear-gradient(135deg, hsl(186 100% 50%), hsl(186 100% 35%));
-    --gradient-dashboard: linear-gradient(180deg, hsl(224 71% 4%), hsl(215 27% 17%));
-    
-    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.2), 0 1px 2px -1px hsl(0 0% 0% / 0.2);
-    --shadow-dashboard: 0 4px 6px -1px hsl(0 0% 0% / 0.2), 0 2px 4px -2px hsl(0 0% 0% / 0.2);
+    --chart-1: 0 0% 98%;
+    --chart-2: 211 96% 78%;
+    --chart-3: 142 69% 70%;
+    --chart-4: 25 95% 70%;
+    --chart-5: 262 83% 85%;
 
-    --sidebar-background: 224 71% 4%;
-    --sidebar-foreground: 213 31% 91%;
-    --sidebar-primary: 186 100% 50%;
-    --sidebar-primary-foreground: 224 71% 4%;
-    --sidebar-accent: 215 27% 17%;
-    --sidebar-accent-foreground: 213 31% 91%;
-    --sidebar-border: 215 27% 17%;
-    --sidebar-ring: 186 100% 50%;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -138,6 +138,7 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   }
 }
